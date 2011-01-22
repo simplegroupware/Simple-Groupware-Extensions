@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GPL -->
+<table>
+  <field name="message_html" displayname="{t}Message{/t}" simple_type="htmlarea" insecure="true">
+	<notin views="display|edit"/>
+    <filter views="details" function="embed_attachments"/>
+	<restore views="reply|replyall" function="compose_html::replymessage"/>
+	<restore views="forward" function="compose_html::forwardmessage"/>
+	<store function="htmlfield"/>
+  </field>
+  <field name="message" displayname="{t}Message{/t}" simple_type="textarea">
+	<onlyin views="display|new" />
+	<hiddenin views="new"/>
+    <filter views="display" function="shortmessage|100"/>
+  </field>
+</table>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GPL -->
+<table>
+  <field name="message_html" displayname="{t}Message{/t}" simple_type="htmlarea" insecure="true" before="message">
+	<store function="htmlfield"/>
+  </field>
+  <field name="message"/>
+</table>
