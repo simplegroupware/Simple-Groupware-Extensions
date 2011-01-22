@@ -1,0 +1,15 @@
+<package>
+<name>tasks_rating</name>
+<filename>SimpleGroupware_Tasks_Rating_0.1.tar.gz</filename>
+<require_version>0.662</require_version>
+<title>Tasks Rating 0.1</title>
+<php_version>5.1</php_version>
+<size>10240</size>
+<description>
+Tasks Rating changes the priority field in the task module from a select box to a rating field.
+<![CDATA[
+License: <a target="_blank" href="http://www.simple-groupware.de/cms/License">GNU GPL v2</a>
+Author: Copyright (C) 2010 by Thomas Bley
+]]>
+</description>
+</package>

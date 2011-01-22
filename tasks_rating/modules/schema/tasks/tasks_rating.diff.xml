@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GPL -->
+<table>
+  <field name="priority" displayname="{t}Priority{/t}" simple_type="rating" simple_size="5">
+  </field>
+</table>
