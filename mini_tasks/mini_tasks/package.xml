@@ -1,0 +1,17 @@
+<package>
+<name>mini_tasks</name>
+<filename>SimpleGroupware_Mini_Tasks_0.2.tar.gz</filename>
+<require_version>0.640</require_version>
+<title>Mini tasks 0.2</title>
+<php_version>5.1</php_version>
+<size>20480</size>
+<description>
+Mini Tasks is a module for handling personal tasks.
+It is similar to the normal tasks module, but does not contain responsibles and project management features.
+A new folder "Mini tasks" is created under "/Workspace/Extensions/".
+<![CDATA[
+License: <a target="_blank" href="http://www.simple-groupware.de/cms/License">GNU GPL v2</a>
+Author: Copyright (C) 2010 by Thomas Bley
+]]>
+</description>
+</package>

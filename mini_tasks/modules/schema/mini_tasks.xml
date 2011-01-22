@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GPL -->
+<table modulename="{t}Mini Tasks{/t}" default_view="display" orderby="ending" order="asc" limit="20" enable_new="true" enable_edit="true" enable_delete="true" enable_empty="true" trigger_edit="createedittask" trigger_new="createedittask" trigger_delete="deletetask" trigger_delete_ccp="deletetask" trigger_new_ccp="createedittask">
+  <view name="display" displayname="{t}Open{/t}" where="closed=0">
+  </view>
+  <view name="calendar" displayname="{t}Calendar{/t} ({t}Open{/t})" where="closed=0" template="display" enable_calendar="begin,ending" markdate="gantt">
+  </view>
+  <view name="display2" displayname="{t}Closed{/t}" where="closed=1" template="display">
+  </view>
+  <view name="details" displayname="{t}Details{/t}" tfield_1="subject" show_preview="true">
+  </view>
+  <singlebutton views="display|calendar" name="close" displayname="{t}Close{/t}" onclick="if (confirm('{t}Really apply the changes ?{/t}')) asset_update({closed:'1'},'@id@');" right="write" icon="accept.gif" />
+  <tab name="general" displayname="{t}General{/t}" />
+
+  <field name="closed" displayname="{t}Closed{/t}" simple_type="checkbox">
+    <INDEX/>
+    <notin views="display|display2|calendar"/>
+  </field>
+  <field name="subject" displayname="{t}Title{/t}" simple_type="text" required="true">
+    <linktext views="display|display2|calendar" value="#index.php?folder=@folder@&amp;view=details&amp;iframe=1&amp;item[]=@id@"/>
+	<filter views="all" function="milestone"/>
+  </field>
+  <field name="begin" displayname="{t}Begin{/t}" simple_type="date" simple_default_function="dateformat_request|begin|now|{t}m/d/Y{/t}" required="true" nowrap="true">
+    <filter views="all" function="dateformat||{t}m/d/Y{/t}"/>
+    <link views="calendar" value="index.php?view=display&amp;today=@begin@"/>
+	<notin views="display2" />
+    <INDEX/>
+	<description hint="{t}Relative formats{/t}" value="nWin('http://www.php.net/manual/en/datetime.formats.relative.php');"/>
+  </field>
+ <field name="ending" displayname="{t}Deadline{/t}" simple_type="date" simple_default_function="dateformat_request|end|now + 1 week|{t}m/d/Y{/t}" required="true" nowrap="true">
+    <filter views="all" function="dateformat||{t}m/d/Y{/t}"/>
+    <link views="calendar" value="index.php?view=calendar&amp;today=@ending@"/>
+    <INDEX/>
+  </field>
+  <field name="duration" displayname="{t}Duration{/t}" simple_type="int" notinall="true" sum="true">
+    <filter views="all" function="duration"/>
+	<onlyin views="display2|details|calendar"/>
+  </field>
+  <field name="description" displayname="{t}Description{/t}" simple_type="textarea">
+    <notin views="display|display2|calendar"/>
+  </field>
+  <field name="status" displayname="{t}Status{/t}" simple_type="select" simple_size="1">
+	<data title="{t}Default{/t}" values="{t}Planned{/t}|{t}In progress{/t}|{t}Completed{/t}|{t}Waiting{/t}|{t}Suspended{/t}|{t}Canceled{/t}"/>
+	<data title="{t}Lookup{/t}" function="dbselect|simple_statuses|statusname,statusname|stattype='tasks'|statusname asc|10"/>
+  </field>
+  <field name="attachment" displayname="{t}Attachment{/t}" simple_type="files" simple_file_size="10M" simple_size="10" multiple="\n">
+    <notin views="display|display2|calendar"/>
+  </field>
+</table>
