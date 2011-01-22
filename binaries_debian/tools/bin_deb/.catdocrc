@@ -1,0 +1,5 @@
+charset_path=../custom/tools/bin_deb/charsets
+map_path=../custom/tools/bin_deb/charsets
+source_charset=cp1252
+target_charset=8859-1
+unknown_char='?'
