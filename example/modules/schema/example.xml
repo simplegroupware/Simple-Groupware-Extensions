@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GPL -->
+<table modulename="{t}Example{/t}" default_view="display" orderby="bookmarkname" order="asc" limit="20"
+       enable_new="true" enable_edit="true" enable_delete="true" enable_empty="true">
+
+  <view name="display" displayname="{t}Display{/t}">
+  </view>
+  <view name="details" displayname="{t}Details{/t}" showinsingleview="true" tfield_1="bookmarkname">
+  </view>
+  <view name="phpinclude" displayname="PHP include" function="example::helloworld" schema_mode="static" default_sql="no_select">
+  </view>
+
+  <field name="bookmarkname" displayname="{t}Name{/t}" simple_type="text" required="true">
+	<linktext value="@ext/norefer.php?url=@url@"/>
+    <validate function="regexp|/^.{3,}$/|{t}Name needs at least 3 characters.{/t}" />
+  </field>
+  
+  <field name="url" displayname="{t}URL{/t}" simple_type="text" required="true" width="50%">
+	<linktext value="@ext/norefer.php?url=@url@"/>
+    <validate function="example::validate_url" />
+    <filter views="all" function="example::short_url" />
+	<store function="urldecode"/>
+  </field>
+  
+  <field name="description" displayname="{t}Description{/t}" simple_type="textarea">
+    <notin views="display"/>
+  </field>
+</table>

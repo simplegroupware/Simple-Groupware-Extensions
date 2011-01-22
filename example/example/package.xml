@@ -1,0 +1,20 @@
+<package>
+<name>example</name>
+<filename>SimpleGroupware_Example_0.4.tar.gz</filename>
+<require_version>0.640</require_version>
+<title>Example 0.4</title>
+<php_version>5.1</php_version>
+<size>20480</size>
+<description>
+Example is a demonstration module for handling bookmarks.
+It is similar to the normal bookmarks module, but does not contain categories.
+A new folder "Example" is created under "/Workspace/Extensions/".
+
+v0.3: added PHP include view
+v0.4: added validator example
+<![CDATA[
+License: <a target="_blank" href="http://www.simple-groupware.de/cms/License">GNU GPL v2</a>
+Author: Copyright (C) 2010 by Example Author
+]]>
+</description>
+</package>
