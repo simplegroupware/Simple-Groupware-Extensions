@@ -1,0 +1,16 @@
+<package>
+<name>private_items</name>
+<filename>SimpleGroupware_Private_Items_0.1.tar.gz</filename>
+<require_version>0.641</require_version>
+<title>Private Items 0.1</title>
+<php_version>5.1</php_version>
+<size>10240</size>
+<description>
+Private items extends contacts, calendar, tasks, notes with the option to make items private.
+Private items are only visible to the user who created the asset.
+<![CDATA[
+License: <a target="_blank" href="http://www.simple-groupware.de/cms/License">GNU GPL v2</a>
+Author: Copyright (C) 2010 by Thomas Bley
+]]>
+</description>
+</package>

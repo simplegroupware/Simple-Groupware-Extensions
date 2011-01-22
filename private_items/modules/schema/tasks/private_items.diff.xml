@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GPL -->
+<table where="(private='0' or createdby=@username@)">
+  <field name="private" displayname="{t}Private{/t}" simple_type="checkbox" before="category">
+    <filter views="all" function="replacechecked"/>
+	<store function="storechecked"/>
+    <INDEX/>
+  </field>
+</table>
