@@ -1,15 +1,15 @@
 <package>
 <name>compose_html</name>
-<filename>SimpleGroupware_Compose_Html_0.2.tar.gz</filename>
+<filename>SimpleGroupware_Compose_Html_0.3.tar.gz</filename>
 <require_version>0.660</require_version>
-<title>Compose Html 0.2</title>
+<title>Compose Html 0.3</title>
 <php_version>5.1</php_version>
 <size>20480</size>
 <description>
 Compose Html makes it possible to write emails in HTML.
 <![CDATA[
 License: <a target="_blank" href="http://www.simple-groupware.de/cms/License">GNU GPL v2</a>
-Author: Copyright (C) 2010 by Thomas Bley
+Author: Copyright (C) 2010-2011 by Thomas Bley
 ]]>
 </description>
 </package>
