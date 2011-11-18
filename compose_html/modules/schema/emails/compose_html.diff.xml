@@ -6,7 +6,7 @@
     <filter views="details" function="embed_attachments"/>
 	<restore views="reply|replyall" function="compose_html::replymessage"/>
 	<restore views="forward" function="compose_html::forwardmessage"/>
-	<store function="htmlfield"/>
+	<store function="compose_html::htmlfield"/>
   </field>
   <field name="message" displayname="{t}Message{/t}" simple_type="textarea">
 	<onlyin views="display|new" />

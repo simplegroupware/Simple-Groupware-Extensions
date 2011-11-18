@@ -2,7 +2,7 @@
 <!-- GPL -->
 <table>
   <field name="message_html" displayname="{t}Message{/t}" simple_type="htmlarea" insecure="true" before="message">
-	<store function="htmlfield"/>
+	<store function="compose_html::htmlfield"/>
   </field>
   <field name="message"/>
 </table>
